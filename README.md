@@ -31,3 +31,8 @@ A React application that displays a scrollable list of 1000 cards with a "Scroll
 ### Testing
 - Used Jest and React Testing Library for unit tests
 - Tested card rendering, button visibility, and click behavior
+
+### Type Safety
+- Implemented TypeScript interfaces for all props:
+  - `CardItem` type for card data
+  - Proper typing for all component props
