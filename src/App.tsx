@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useState } from 'react';
+import CardList from './components/CardList';
+import { CardItem } from './types/types';
 import './App.css';
 
 function App() {
+  const [cards] = useState<CardItem[]>(() => {
+    return Array.from({ length: 1000 }, (_, i) => ({
+      id: i + 1,
+      title: `Tip #${i + 1}`,
+      description: `This is a sample tip about home loans. ${i + 1}`,
+    }));
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1 className="app-title">Card List App</h1>
+      <CardList cards={cards} />
     </div>
   );
 }

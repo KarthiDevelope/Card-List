@@ -1,46 +1,33 @@
-# Getting Started with Create React App
+# Card List App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React application that displays a scrollable list of 1000 cards with a "Scroll to Top" button.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Renders 1000 cards in a responsive grid
+- Smooth scroll to top functionality
+- Button appears after scrolling 300px down
+- Unit tests for key components
 
-### `npm start`
+## Setup
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Creating a New Project with this command: npx create-react-app card-list --template typescript
+2. it will Autiomatically installs All dependency with node modules
+3. Run the app: `npm start`
+4. Run tests: `npm run test`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Implementation Details
 
-### `npm test`
+### Card List
+- Used React useState to generate 1000 card items
+- Implemented a responsive grid layout with CSS Grid
+- Each card displays a title and description
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Scroll Behavior
+- Added scroll event listener to track scroll position
+- ScrollToTopButton appears conditionally based on scroll position
+- Implemented smooth scrolling with `window.scrollTo`
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Testing
+- Used Jest and React Testing Library for unit tests
+- Tested card rendering, button visibility, and click behavior
