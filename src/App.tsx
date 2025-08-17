@@ -3,6 +3,7 @@ import CardList from './components/CardList';
 import CardDetail from './components/CardDetail';
 import { useState } from 'react';
 import { CardItem } from './types/types';
+import './App.css';
 
 function App() {
   const [cards] = useState<CardItem[]>(() =>
