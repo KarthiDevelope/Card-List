@@ -1,9 +1,23 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import App from '../App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/Card List App/i);
-  expect(linkElement).toBeInTheDocument();
+describe('App Component', () => {
+  it('renders the app title', () => {
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+    expect(screen.getByText(/Card List App/i)).toBeInTheDocument();
+  });
+
+  it('renders card list by default', () => {
+    render(
+      <MemoryRouter initialEntries={['/']}>
+        <App />
+      </MemoryRouter>
+    );
+    expect(screen.getByTestId('app')).toBeInTheDocument();
+  });
 });

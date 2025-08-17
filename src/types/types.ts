@@ -5,8 +5,14 @@ export interface CardItem {
 }
 
 export interface CardProps {
+  id: number;
   title: string;
   description: string;
+  [key: string]: any;
+}
+
+export interface CardDetailProps {
+  cards: CardItem[];
 }
 
 export interface CardListProps {

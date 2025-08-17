@@ -61,3 +61,10 @@
   background-color: #535bf2;
   transform: scale(1.1);
 }
+
+.no-cards-message {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;
+  color: #666;
+}

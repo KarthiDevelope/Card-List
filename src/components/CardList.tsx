@@ -29,14 +29,19 @@ function CardList({ cards }: CardListProps) {
   return (
     <div className='card-list-container'>
       <div className='card-list'>
-        {cards?.map((card) => (
-          <Card
-            key={card?.id}
-            title={card?.title}
-            description={card?.description}
-            data-testid='card'
-          />
-        ))}
+        {cards?.length > 0 ? (
+          cards.map((card) => (
+            <Card
+              key={card?.id}
+              title={card?.title}
+              description={card?.description}
+              data-testid='card'
+              id={card?.id}
+            />
+          ))
+        ) : (
+          <div className='no-cards-message'>No cards to display</div>
+        )}
       </div>
       {showScrollButton && <ScrollToTopButton onClick={scrollToTop} />}
     </div>
